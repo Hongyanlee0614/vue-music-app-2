@@ -19,8 +19,9 @@
           {{ song.title }} - {{ song.artist }}
         </button>
       </section>
+      <small class="author">2021 @angelol2046</small>
   </main>
-  <footer><small class="author">2021 @angelol2046</small></footer>
+  
 </template>
 
 <script>
@@ -158,9 +159,14 @@ header {
 }
 main {
   width: 100%;
-  max-width: 768px;
+  max-width: 2330px;
   margin: 0 auto;
   padding: 25px;
+  background-image: url(./assets/image.jpg);
+  text-align: center;
+}
+main:after{
+  opacity: 0.1;
 }
 .song-title {
   color: #53565A;
@@ -232,7 +238,7 @@ button:hover {
   color: #FFF;
   background-image: linear-gradient(to right, #CC2E5D, #FF5858);
 }
-footer {
+.author {
   text-align: center;
   opacity: 0.4;
   margin-bottom: 10px;
