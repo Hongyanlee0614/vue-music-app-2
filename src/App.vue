@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>想见你歌单</h1>      
+    <h1>想见你音乐歌单</h1>      
   </header>
   <main>
     <section class="player">
@@ -14,7 +14,7 @@
       </section>
       <br>
       <section class="playlist">
-        <h3>曲目</h3>
+        <h3>音乐列表</h3>
         <button v-for="song in songs" :key="song.src" @click="play(song)" :class="(song.src == current.src) ? 'song playing' : 'song'">
           {{ song.title }} - {{ song.artist }}
         </button>
@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
@@ -37,7 +36,7 @@ export default {
       isPlaying: false,
       songs: [
         {
-          title: '想见你想见你想见你',
+          title: '想见你想见你想见你 Miss You 3000',
           artist: '八三夭',
           src: require('./assets/xiangjianni.mp3')
         },
@@ -57,9 +56,14 @@ export default {
           src: require('./assets/kanjiannideshengyin.mp3')
         },
         {
-          title: '逃',
-          artist: '孙盛希',
+          title: '逃 Come Away',
+          artist: '孙盛希 Shi Shi',
           src: require('./assets/tao.mp3')
+        },
+        {
+          title: '真的吗 Is It True',
+          artist: '莫文蔚 Karen Mok',
+          src: require('./assets/zhendema.mp3')
         },
         {
           title: 'Last Dance',
@@ -90,7 +94,67 @@ export default {
           title: 'Devoted',
           artist: 'X-Ray Dog',
           src: require('./assets/devoted.mp3')
-        }
+        },
+        {
+          title: '一份白糖粿',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/yifenbaitangguo.mp3')
+        },
+        {
+          title: '夢裡面的我們在一起很久很久',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/夢裡面的我們在一起很久很久.mp3')
+        },
+        {
+          title: '宇宙中最黯淡的那顆星',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/宇宙中最黯淡的那顆星.mp3')
+        },
+        {
+          title: '如果可以回到過去, 我會去找你',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/如果可以回到過去我會去找你.mp3')
+        },
+        {
+          title: '背著回憶再遇見',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/背著回憶再遇見.mp3')
+        },
+        {
+          title: '醒來的第一個念頭, 就是我好想好想你',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/醒來的第一個念頭就是我好想好想你.mp3')
+        },
+        {
+          title: '一直住在我心裡的某個人',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/一直住在我心裡的某個人.mp3')
+        },
+        {
+          title: '不說出口的第三個願望',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/不說出口的第三個願望.mp3')
+        },
+        {
+          title: '無聲的妳 身後無聲的我',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/無聲的妳身後無聲的我.mp3')
+        },
+        {
+          title: '如果可以在夢裡見到你',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/如果可以在夢裡見到你.mp3')
+        },
+        {
+          title: '你會回到我身邊, 總有一天',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/你會回到我身邊總有一天.mp3')
+        },
+        {
+          title: '唯一后悔过的事，是让你离开我身边',
+          artist: 'Various Artists - Topic',
+          src: require('./assets/唯一後悔過的事是讓你離開我身邊.mp3')
+        },
       ],
       player: new Audio()
     }
@@ -101,6 +165,7 @@ export default {
         this.current = song;
         this.player.src = this.current.src;
       }
+      this.index = this.songs.indexOf(this.current)
       this.player.play();
       this.player.addEventListener('ended', function () {
         this.index++;
@@ -161,8 +226,10 @@ main {
   width: 100%;
   max-width: 2330px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 20px;
   background-image: url(./assets/image.jpg);
+  background-size: auto 100%;
+  background-position: -170px 0;
   text-align: center;
 }
 main:after{
@@ -241,6 +308,5 @@ button:hover {
 .author {
   text-align: center;
   opacity: 0.4;
-  margin-bottom: 10px;
 }
 </style>
