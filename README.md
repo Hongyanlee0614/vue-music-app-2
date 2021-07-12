@@ -1,4 +1,5 @@
-# vue_musicapp
+# Vue Music App 2
+This music app is a collection of OST/BGM for the drama entitled 'Someday or One Day'
 
 ## Project setup
 ```
